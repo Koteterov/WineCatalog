@@ -5,6 +5,9 @@
     <meta charset="UTF-8" />
     <title>My Wine Catalog</title>
     <link rel="stylesheet" href="/styles/style.css"/>
+    <script src="/src/app.js" type="module"></script>
+
+
 </head>
 
 <body>
@@ -15,33 +18,22 @@
         <header>
             <nav>
                 <img src="./images/wine-bottle.png">
-                <a href="#">Home</a>
+                <a href="/">Home</a>
                 <ul>
                     <!--All user-->
-                    <li><a href="#">Catalog</a></li>
-                    <li><a href="#">Search</a></li>
+                    <li><a href="/catalog">Catalog</a></li>
+                    <li><a href="/search">Search</a></li>
                     <!--Only guest-->
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li class="quest"><a href="/login">Login</a></li>
+                    <li class="quest"><a href="/register">Register</a></li>
                     <!--Only user-->
-                    <li><a href="#">Create Album</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li class="user"><a href="/create">Create Wine</a></li>
+                    <li class="user" id="logoutBtn"><a href="#">Logout</a></li>
                 </ul>
             </nav>
         </header>
 
         <main id="main-content"></main>
-
-        <!--Home Page-->
-        <section id="welcomePage">
-            <div id="welcome-message">
-                <h1>Welcome to My Wine Catalog!</h1>
-            </div>
-
-            <div class="music-img">
-                <img src="./images/Wine-Home.webp">
-            </div>
-        </section>
 
 
         <footer>

@@ -1334,41 +1334,52 @@
     };
     var seedData = {
         wines: {
-            "ff436770-76c5-40e2-b231-77409eda7a61": {
+            "1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "product": "750ml Red Wine Ribeaupierre Syrah",
+                "name": "750ml Red Wine Ribeaupierre Syrah",
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/Ribeaupierre-Syrah.png",
                 "price": "12.80 lv",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "1xxxx",
-                "_createdOn": 1617194128618,
+                "_createdOn": 1617194128618
             },
-            "1840a313-225c-416a-817a-9954d4609f7c": {
+            "2": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "product": "750ml Red Wine La Sasteria",
+                "name": "750ml Red Wine La Sasteria",
                 "netQty": "0.75 l",
                 "origin": "Spain",
-                "imgUrl": "/images/Sasteria.jpg",
+                "imgUrl": "/images/Sasteria.png",
                 "price": "7.99 lv",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "2xxxx",
-                "_createdOn": 1617194210928,
+                "_createdOn": 1617194295474
             },
-            "126777f5-3277-42ad-b874-76d043b069cb": {
+            "3": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "product": "750ml Red Wine Montepulcano d'Abruzzo",
+                "name": "750ml Red Wine Montepulcano d'Abruzzo",
                 "netQty": "0.75 l",
                 "origin": "Italy",
-                "imgUrl": "/images/Montepulcano.jpg",
+                "imgUrl": "/images/Montepulcano.png",
                 "price": "8.75 lv",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "3xxxx",
-                "_createdOn": 1617194295474,
-            }
-        }
-    };
+                "_createdOn": 1617194295480
+            },
+            "4": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "??? 750ml Red Wine Montepulcano d'Abruzzo",
+                "netQty": "0.75 l",
+                "origin": "Italy",
+                "imgUrl": "/images/Montepulcano.png",
+                "price": "8.75 lv",
+                "storage": "Keep in a dry and cool place, protected from direct sun light",
+                "supplier": "3xxxx",
+                "_createdOn": 1617194295580
+            },
+        },
+            };
     var rules$1 = {
         users: {
             ".create": false,
