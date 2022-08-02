@@ -3,6 +3,7 @@ import { render } from "./lib.js";
 import { catalogPage } from "./views/catalog.js";
 import { logout } from "./api/data.js";
 import { homePage } from "./views/home.js";
+import { loginPage } from "./views/login.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -12,6 +13,7 @@ page(decorateContext);
 page("/index.html", "/");
 page("/", homePage);
 page('/catalog', catalogPage)
+page('/login', loginPage)
 
 setUserNav();
 page.start();

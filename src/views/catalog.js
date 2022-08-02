@@ -18,7 +18,7 @@ const cardTemplate = (data) => html`
         <p class="name">Product Name: ${data.name}</p>
         <p class="artist">Net Quantity: ${data.netQty}</p>
         <p class="genre">Origin: ${data.origin}</p>
-        <p class="genre">Storage: ${data.storage}</p>
+        <!-- <p class="genre">Storage: ${data.storage}</p> -->
         <p class="price">Price: ${data.price}</p>
         <p class="date">Supplier: ${data.supplier}</p>
       </div>
