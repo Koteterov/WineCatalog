@@ -35,7 +35,7 @@ const createTemplate = (onSubmit) => html`
             placeholder="Price"
           />
 
-          <label for="netQuantity" class="vhide">Release date</label>
+          <label for="netQuantity" class="vhide">Net Quantity</label>
           <input
             id="netQuantity"
             name="netQuantity"
@@ -44,7 +44,7 @@ const createTemplate = (onSubmit) => html`
             placeholder="Net Quantity"
           />
 
-          <label for="origin" class="vhide">Artist</label>
+          <label for="origin" class="vhide">Origin</label>
           <input
             id="origin"
             name="origin"
@@ -53,7 +53,7 @@ const createTemplate = (onSubmit) => html`
             placeholder="Origin"
           />
 
-          <label for="supplier" class="vhide">Genre</label>
+          <label for="supplier" class="vhide">Supplier</label>
           <input
             id="supplier"
             name="supplier"
@@ -62,7 +62,7 @@ const createTemplate = (onSubmit) => html`
             placeholder="Supplier"
           />
 
-          <label for="storage" class="vhide">Description</label>
+          <label for="storage" class="vhide">Storage</label>
           <textarea
             name="storage"
             class="storage"

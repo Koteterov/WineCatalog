@@ -7,6 +7,7 @@ import { loginPage } from "./views/login.js";
 import { registerPage } from "./views/register.js";
 import { detailsPage } from "./views/details.js";
 import { createPage } from "./views/create.js";
+import { editPage } from "./views/edit.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -15,11 +16,12 @@ const main = document.getElementById("main-content");
 page(decorateContext);
 page("/index.html", "/");
 page("/", homePage);
-page('/catalog', catalogPage)
-page('/login', loginPage)
-page('/register', registerPage)
-page('/details/:id', detailsPage)
-page('/create', createPage)
+page("/catalog", catalogPage);
+page("/login", loginPage);
+page("/register", registerPage);
+page("/details/:id", detailsPage);
+page("/create", createPage);
+page("/edit/:id", editPage);
 
 setUserNav();
 page.start();
@@ -27,7 +29,7 @@ page.start();
 function decorateContext(ctx, next) {
   ctx.render = (content) => render(content, main);
   ctx.setUserNav = setUserNav;
-  
+
   const user = sessionStorage.getItem("userId");
   if (user) {
     ctx.user = user;
@@ -58,7 +60,6 @@ function setUserNav() {
 async function OnLogout() {
   await logout();
   page.redirect("/");
-  
+
   setUserNav();
 }
-
