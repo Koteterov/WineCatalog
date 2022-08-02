@@ -1340,7 +1340,7 @@
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/Ribeaupierre-Syrah.png",
-                "price": "12.80 lv",
+                "price": "12.80",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "1xxxx",
                 "_createdOn": 1617194128618
@@ -1351,7 +1351,7 @@
                 "netQty": "0.75 l",
                 "origin": "Spain",
                 "imgUrl": "/images/Sasteria.png",
-                "price": "7.99 lv",
+                "price": "7.99",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "2xxxx",
                 "_createdOn": 1617194295474
@@ -1362,7 +1362,7 @@
                 "netQty": "0.75 l",
                 "origin": "Italy",
                 "imgUrl": "/images/Montepulcano.png",
-                "price": "8.75 lv",
+                "price": "8.75",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "3xxxx",
                 "_createdOn": 1617194295480
@@ -1373,7 +1373,7 @@
                 "netQty": "0.75 l",
                 "origin": "Italy",
                 "imgUrl": "/images/Montepulcano.png",
-                "price": "8.75 lv",
+                "price": "8.75",
                 "storage": "Keep in a dry and cool place, protected from direct sun light",
                 "supplier": "3xxxx",
                 "_createdOn": 1617194295580

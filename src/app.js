@@ -5,6 +5,7 @@ import { logout } from "./api/data.js";
 import { homePage } from "./views/home.js";
 import { loginPage } from "./views/login.js";
 import { registerPage } from "./views/register.js";
+import { detailsPage } from "./views/details.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -16,6 +17,7 @@ page("/", homePage);
 page('/catalog', catalogPage)
 page('/login', loginPage)
 page('/register', registerPage)
+page('/details/:id', detailsPage)
 
 setUserNav();
 page.start();

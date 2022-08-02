@@ -14,7 +14,7 @@ const catalogTemplate = (data, user) => html`
         <p class="artist">Net Quantity: ${data.netQty}</p>
         <p class="genre">Origin: ${data.origin}</p>
         <!-- <p class="genre">Storage: ${data.storage}</p> -->
-        <p class="price">Price: ${data.price}</p>
+        <p class="price">Price: ${data.price} lv</p>
         <p class="date">Supplier: ${data.supplier}</p>
       </div>
       <div class="btn-group">
@@ -28,26 +28,6 @@ const catalogTemplate = (data, user) => html`
   </section>
 `;
 
-// const cardTemplate = (data) => html`
-//   <div class="card-box">
-//     <img src=${data.imgUrl} />
-//     <div>
-//       <div class="text-center">
-//         <p class="name">Product Name: ${data.name}</p>
-//         <p class="artist">Net Quantity: ${data.netQty}</p>
-//         <p class="genre">Origin: ${data.origin}</p>
-//         <!-- <p class="genre">Storage: ${data.storage}</p> -->
-//         <p class="price">Price: ${data.price}</p>
-//         <p class="date">Supplier: ${data.supplier}</p>
-//       </div>
-//       <div class="btn-group">
-//         ${user
-//           ? html` <a href="/details/${data._id}" id="details">Details</a> `
-//           : nothing}
-//       </div>
-//     </div>
-//   </div>
-// `;
 
 export async function catalogPage(ctx) {
   const data = await getList();
