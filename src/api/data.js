@@ -29,18 +29,18 @@ export async function createWine(data) {
 }
 
 export async function getSingleWine(id) {
-  return await api.get(host + `/data/wines/${id}`);
+  return await api.get(host + endpoints.details(id));
 }
 
 export async function deleteWine(id) {
-  return await api.del(host + `/data/wines/${id}`);
+  return await api.del(host + endpoints.delete(id));
 }
 
 export async function editWine(id) {
-  return await api.put(host + `/data/wines/${id}`);
+  return await api.put(host + endpoints.details(id));
 }
 
 export async function search(query) {
-  return await api.post(host + `/data/wines?where=name%20LIKE%20%22${query}%22`);
+  return await api.post(host + endpoints.search(query));
 }
 

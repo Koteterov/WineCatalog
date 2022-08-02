@@ -13,7 +13,6 @@ const catalogTemplate = (data, user) => html`
         <p class="name">Product Name: ${data.name}</p>
         <p class="quantity">Net Quantity: ${data.netQty}</p>
         <p class="origin">Origin: ${data.origin}</p>
-        <!-- <p class="genre">Storage: ${data.storage}</p> -->
         <p class="price">Price: ${data.price} lv</p>
         <p class="supplier">Supplier: ${data.supplier}</p>
       </div>
