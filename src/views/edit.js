@@ -64,9 +64,13 @@ const editTemplate = (wine, onSubmit) => html`
           />
 
           <label for="storage" class="vhide">Storage</label>
-          <textarea name="storage" class="storage" rows="10" cols="10">
-${wine.storage}.</textarea
-          >
+          <textarea
+            name="storage"
+            class="storage"
+            rows="10"
+            cols="10"
+            .value=${wine.storage}
+          ></textarea>
 
           <button class="edit-album" type="submit">Edit Wine</button>
         </div>

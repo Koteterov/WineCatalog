@@ -15,7 +15,7 @@ const detailsTemplate = (data, isCreator, onDelete) => html`
           <h4>Origin: ${data.origin}</h4>
           <h4>Price: ${data.price} lv</h4>
           <h4>Supplier: ${data.supplier}</h4>
-          <p>Storage: ${data.storage}.</p>
+          <p>Storage: ${data.storage}</p>
         </div>
 
         <div class="actionBtn">
