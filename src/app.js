@@ -4,6 +4,7 @@ import { catalogPage } from "./views/catalog.js";
 import { logout } from "./api/data.js";
 import { homePage } from "./views/home.js";
 import { loginPage } from "./views/login.js";
+import { registerPage } from "./views/register.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -14,6 +15,7 @@ page("/index.html", "/");
 page("/", homePage);
 page('/catalog', catalogPage)
 page('/login', loginPage)
+page('/register', registerPage)
 
 setUserNav();
 page.start();
@@ -52,6 +54,7 @@ function setUserNav() {
 async function OnLogout() {
   await logout();
   page.redirect("/");
+  
   setUserNav();
 }
 
