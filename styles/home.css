@@ -5,6 +5,11 @@ body {
     background-color: rgb(153, 107, 107)
 }
 
+
+.wine-img {
+  display: flex;
+}
+
 nav,
 footer {
     background-color: #0B0C10;
@@ -73,7 +78,7 @@ nav a:hover {
 }
 
 #welcomePage img {
-    width: 40%
+    width: 50%
 }
 
 nav > img {

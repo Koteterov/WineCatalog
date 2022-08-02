@@ -4,7 +4,7 @@ import { html } from "../lib.js";
 
 const homeTemplate = () => html `
         <section id="welcomePage">
-            <div id="welcome-message">
+            <div class="wine-img" id="welcome-message">
                 <h1>Welcome to My Wine Catalog!</h1>
             </div>
 
