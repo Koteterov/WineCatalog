@@ -53,11 +53,3 @@ export async function detailsPage(ctx) {
   }
 }
 
-// "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-// "name": "750ml Red Wine Ribeaupierre Syrah",
-// "netQty": "0.75 l",
-// "origin": "France",
-// "imgUrl": "/images/Ribeaupierre-Syrah.png",
-// "price": "12.80",
-// "storage": "Keep in a dry and cool place, protected from direct sun light",
-// "supplier": "1xxxx",
