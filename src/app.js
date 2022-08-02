@@ -6,6 +6,7 @@ import { homePage } from "./views/home.js";
 import { loginPage } from "./views/login.js";
 import { registerPage } from "./views/register.js";
 import { detailsPage } from "./views/details.js";
+import { createPage } from "./views/create.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -18,6 +19,7 @@ page('/catalog', catalogPage)
 page('/login', loginPage)
 page('/register', registerPage)
 page('/details/:id', detailsPage)
+page('/create', createPage)
 
 setUserNav();
 page.start();

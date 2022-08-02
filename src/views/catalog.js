@@ -11,11 +11,11 @@ const catalogTemplate = (data, user) => html`
     <div>
       <div class="text-center">
         <p class="name">Product Name: ${data.name}</p>
-        <p class="artist">Net Quantity: ${data.netQty}</p>
-        <p class="genre">Origin: ${data.origin}</p>
+        <p class="quantity">Net Quantity: ${data.netQty}</p>
+        <p class="origin">Origin: ${data.origin}</p>
         <!-- <p class="genre">Storage: ${data.storage}</p> -->
         <p class="price">Price: ${data.price} lv</p>
-        <p class="date">Supplier: ${data.supplier}</p>
+        <p class="supplier">Supplier: ${data.supplier}</p>
       </div>
       <div class="btn-group">
         ${user

@@ -24,8 +24,8 @@ export async function getList() {
   return await api.get(host + endpoints.catalog);
 }
 
-export async function createWine() {
-  return await api.post(host + endpoints.create);
+export async function createWine(data) {
+  return await api.post(host + endpoints.create, data);
 }
 
 export async function getSingleWine(id) {

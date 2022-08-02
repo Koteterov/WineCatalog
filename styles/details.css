@@ -7,30 +7,30 @@
     margin-bottom: 200px;
 }
 
-.albumCover {
+.wineCover {
     float: left;
     height: 100%;
     width: auto;
     margin-right: 20px;
 }
 
-.albumCover img {
+.wineCover img {
     border-radius: 12px 0 0 7px;
     height: 100%;
 }
 
-.albumText {
+.wineText {
     padding-left: 10px;
     padding-top: 20px;
 }
 
-.albumText h1 {
+.wineText h1 {
     color:gainsboro;
     font-weight: bolder;
     font-size: 28px;
 }
 
-.albumText h3 {
+.wineText h3 {
     margin: 18px 0 47px 18px;
     font-size: 18px;
     color: #cac1c1;
@@ -38,20 +38,20 @@
     margin-bottom: 0;
 }
 
-.albumText h4 {
+.wineText h4 {
     margin: 8px 0 10px 18px;
     font-size: 18px;
     color: #cac1c1;
     letter-spacing: 0.2em;
 }
 
-.albumText h5 {
+.wineText h5 {
     margin: 8px 0 10px 14px;
     font-size: 16px;
     color: white;
 }
 
-.albumText > p {
+.wineText > p {
     height: auto;
     width: 100%;
     color: #cac1c1;

@@ -5,11 +5,11 @@ import { deleteWine } from "../api/data.js";
 const detailsTemplate = (data, isCreator, onDelete) => html`
   <section id="detailsPage">
     <div class="wrapper">
-      <div class="albumCover">
+      <div class="wineCover">
         <img src=${data.imgUrl} />
       </div>
-      <div class="albumInfo">
-        <div class="albumText">
+      <div class="wineInfo">
+        <div class="wineText">
           <h1>Product Name: ${data.name}</h1>
           <h3>Net Quantity: ${data.netQty}</h3>
           <h4>Origin: ${data.origin}</h4>
