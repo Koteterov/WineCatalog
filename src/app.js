@@ -8,6 +8,7 @@ import { registerPage } from "./views/register.js";
 import { detailsPage } from "./views/details.js";
 import { createPage } from "./views/create.js";
 import { editPage } from "./views/edit.js";
+import { searchPage } from "./views/search.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
@@ -22,6 +23,8 @@ page("/register", registerPage);
 page("/details/:id", detailsPage);
 page("/create", createPage);
 page("/edit/:id", editPage);
+page("/search", searchPage)
+
 
 setUserNav();
 page.start();

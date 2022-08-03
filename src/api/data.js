@@ -39,5 +39,5 @@ export async function editWine(id, data) {
 }
 
 export async function search(query) {
-  return await api.post(host + endpoints.search(query));
+  return await api.get(host + endpoints.search(query));
 }
