@@ -59,19 +59,3 @@ export async function searchPage(ctx) {
   }
 }
 
-// export async function searchPage(ctx) {
-//     const title = ctx.querystring.split("=")[1];
-//     const data = title == undefined ? [] : await search(title);
-
-//     ctx.render(searchTemplate(onSearch, data, title));
-
-//     async function onSearch(e) {
-//       e.preventDefault();
-
-//       const formData = new FormData(e.target);
-
-//       const query = formData.get("search").trim();
-
-//       ctx.page.redirect(`search?query=${query}`);
-//     }
-//   }
