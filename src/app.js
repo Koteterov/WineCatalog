@@ -16,6 +16,8 @@ const main = document.getElementById("main-content");
 const welcomeSpan = document.querySelector("nav span");
 
 page(decorateContext);
+page(parseQueryString)
+
 page("/index.html", "/");
 page("/", homePage);
 page("/catalog", catalogPage);
@@ -63,6 +65,18 @@ function setUserNav() {
 
     welcomeSpan.style.display = "none";
   }
+}
+
+function parseQueryString(ctx, next) {
+  ctx.query = {};
+  if (ctx.querystring) {
+      const query = Object.fromEntries(ctx.querystring
+          .split('&')
+          .map(p => p.split('=')));
+      Object.assign(ctx.query, query);
+  }
+
+  next();
 }
 
 async function OnLogout() {

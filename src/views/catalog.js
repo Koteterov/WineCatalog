@@ -1,9 +1,15 @@
 import { html, repeat, nothing } from "../lib.js";
-import { getList } from "../api/data.js";
+import { getAllWines } from "../api/data.js";
 
-const catalogTemplate = (data, user) => html`
+const catalogTemplate = (data, user, page, pages) => html`
   <section id="catalogPage">
     <h1>All Wines</h1>
+  <div id="pagination">
+    ${page > 1 ? html`<a href="?page=${page - 1}">&lt; Prev</a>` : html`<a>&lt; Prev</a>`}
+    <span>Page ${page} of ${pages}</span>
+    ${page < pages ? html`<a href="?page=${page + 1}">Next &gt;</a>` : html`<a>Next &gt;</a>`}
+  </div>
+
     ${data.length > 0
       ? repeat(data, (i) => i._id, (data) => html`
   <div class="card-box">
@@ -29,8 +35,10 @@ const catalogTemplate = (data, user) => html`
 
 
 export async function catalogPage(ctx) {
-  const data = await getList();
   const user = ctx.user;
 
-  ctx.render(catalogTemplate(data, user));
+  const page = Number(ctx.query.page) || 1;
+  const {data, pages} = await getAllWines(page)
+
+  ctx.render(catalogTemplate(data, user, page, pages));
 }

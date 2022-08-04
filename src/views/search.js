@@ -38,8 +38,7 @@ const searchTemplate = (onClick, data, searchInput, user) => html`
                   </div>
                 </div>
               </div>
-            `
-          )
+            `)
         : html`<p class="no-result">No result.</p>`}
     </div>
   </section>

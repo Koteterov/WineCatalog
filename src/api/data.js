@@ -7,6 +7,7 @@ export const login = api.login;
 export const register = api.register;
 export const logout = api.logout;
 
+const pageSize = 3
 const endpoints = {
   register: "/users/register",
   login: "/users/login",
@@ -16,8 +17,27 @@ const endpoints = {
   details: (id) => `/data/wines/${id}`,
   delete: (id) => `/data/wines/${id}`,
   search: (query) => `/data/wines?where=name%20LIKE%20%22${query}%22`,
+  wines: `/data/wines?pageSize=${pageSize}&offset=`,
+  size: '/data/wines?count',
+
+
 };
 
+// to get all items with pages
+export async function getAllWines(page) {
+  let dataUrl = endpoints.wines + (page - 1) * pageSize;
+  let sizeUrl = endpoints.size;
+  const [data, size] = await Promise.all([
+    api.get(host + dataUrl),
+    api.get(host + sizeUrl)
+]);
+return {
+    data,
+    pages: Math.ceil(size / pageSize)
+};
+}
+
+// to get all items without pages
 export async function getList() {
   return await api.get(host + endpoints.catalog);
 }
