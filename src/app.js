@@ -13,6 +13,7 @@ import { searchPage } from "./views/search.js";
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
 const main = document.getElementById("main-content");
+const welcomeSpan = document.querySelector("nav span");
 
 page(decorateContext);
 page("/index.html", "/");
@@ -23,8 +24,7 @@ page("/register", registerPage);
 page("/details/:id", detailsPage);
 page("/create", createPage);
 page("/edit/:id", editPage);
-page("/search", searchPage)
-
+page("/search", searchPage);
 
 setUserNav();
 page.start();
@@ -50,6 +50,9 @@ function setUserNav() {
     document
       .querySelectorAll(".guest")
       .forEach((g) => (g.style.display = "none"));
+
+    welcomeSpan.style.display = "inline";
+    welcomeSpan.textContent = `Welcome, ${sessionStorage.getItem("email")}!`;
   } else {
     document
       .querySelectorAll(".user")
@@ -57,6 +60,8 @@ function setUserNav() {
     document
       .querySelectorAll(".guest")
       .forEach((g) => (g.style.display = "inline"));
+
+    welcomeSpan.style.display = "none";
   }
 }
 

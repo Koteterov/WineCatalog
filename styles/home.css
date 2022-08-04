@@ -32,6 +32,12 @@ nav a {
     position: relative;
     margin: 20px;
 }
+nav span {
+    font-size: 20px;
+    color: rgb(234, 110, 110);
+    font-weight: bolder;
+
+}
 
 nav ul {
     margin: 0 0 0 auto;
