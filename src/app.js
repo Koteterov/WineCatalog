@@ -79,6 +79,15 @@ function parseQueryString(ctx, next) {
   next();
 }
 
+export function notify(message) {
+  const divEl = document.getElementById("errorBox");
+  const spanEl = divEl.querySelector("span");
+  spanEl.textContent = message;
+  divEl.style.display = "block";
+
+  setTimeout(() => (divEl.style.display = "none"), 3000);
+}
+
 async function OnLogout() {
   await logout();
   page.redirect("/");

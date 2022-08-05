@@ -1,5 +1,6 @@
 import { html } from "../lib.js";
 import { login } from "../api/data.js";
+import { notify } from "../app.js";
 
 const loginTemplate = (onSubmit) => html `
         <section id="loginPage">
@@ -39,7 +40,7 @@ export async function loginPage(ctx) {
       const password = formData.get("password").trim();
   
       if (!email || !password) {
-        alert("Please fill in both fields!");
+        notify("Please fill in both fields!");
         return;
       }
   
@@ -48,7 +49,7 @@ export async function loginPage(ctx) {
         ctx.setUserNav();
         ctx.page.redirect("/");
       } catch (error) {
-        alert(error.message);
+        notify(error.message);
       }
     }
   }

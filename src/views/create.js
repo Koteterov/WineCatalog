@@ -1,5 +1,7 @@
 import { html } from "../lib.js";
 import { createWine } from "../api/data.js";
+import { notify } from "../app.js";
+
 
 const createTemplate = (onSubmit) => html`
   <section class="createPage">
@@ -118,7 +120,7 @@ export async function createPage(ctx) {
       e.target.reset();
       ctx.page.redirect(`/catalog`);
     } catch (error) {
-      alert(error.message);
+      notify(error.message);
     }
   }
 }

@@ -1,6 +1,8 @@
 import { html } from "../lib.js";
 import { getSingleWine } from "../api/data.js";
 import { editWine } from "../api/data.js";
+import { notify } from "../app.js";
+
 
 const editTemplate = (wine, onSubmit) => html`
   <section class="editPage">
@@ -124,7 +126,7 @@ export async function editPage(ctx) {
       e.target.reset();
       ctx.page.redirect(`/catalog`);
     } catch (error) {
-      alert(error.message);
+      notify(error.message);
     }
   }
 }

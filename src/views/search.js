@@ -1,5 +1,7 @@
 import { html, repeat, nothing } from "../lib.js";
 import { search } from "../api/data.js";
+import { notify } from "../app.js";
+
 
 const searchTemplate = (onClick, data, searchInput, user) => html`
   <section id="searchPage">
@@ -56,7 +58,7 @@ export async function searchPage(ctx) {
     const query = document.getElementById("search-input");
 
     if (query.value == "") {
-      alert("Please fill in!");
+      notify("Please fill in!");
       return;
     }
     ctx.page.redirect(`search?query=${query.value.trim()}`);

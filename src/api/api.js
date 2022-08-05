@@ -23,7 +23,7 @@ async function request(url, options) {
       return response;
     }
   } catch (error) {
-    alert(error.message);
+    // alert(error.message);
     throw error;
   }
 }

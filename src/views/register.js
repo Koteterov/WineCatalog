@@ -1,5 +1,7 @@
 import { html } from "../lib.js";
 import { register } from "../api/data.js";
+import { notify } from "../app.js";
+
 
 
 const registerTemplate = (onSubmit) => html `
@@ -53,7 +55,7 @@ export async function registerPage(ctx) {
         ctx.page.redirect('/')
   
       } catch (error) {
-        alert(error.message);
+        notify(error.message);
       }
     }
 }
