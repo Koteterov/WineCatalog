@@ -8,6 +8,16 @@ body {
 
 .wine-img {
   display: flex;
+  box-shadow: 2px 5px 13px 0px #000000, 8px -15px 31px -12px rgb(0 0 0 / 0%);
+}
+
+#loginPrompt {
+    text-shadow: none;
+    color: white;
+}
+
+#loginPrompt, a {
+text-decoration: none;
 }
 
 nav,
@@ -77,14 +87,14 @@ nav a:hover {
 }
 
 #welcomePage {
-    color: #45a29e;
+    color:white;
     font-size: 24px;
     padding: 30px;
     margin: 10px;
 }
 
 #welcomePage img {
-    width: 50%
+    width: 38%;
 }
 
 nav > img {
