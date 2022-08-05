@@ -19,6 +19,8 @@ const endpoints = {
   search: (query) => `/data/wines?where=name%20LIKE%20%22${query}%22`,
   wines: `/data/wines?pageSize=${pageSize}&offset=`,
   size: '/data/wines?count',
+  mywines: (userId) => `/data/wines?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
+
 
 
 };
@@ -60,4 +62,8 @@ export async function editWine(id, data) {
 
 export async function search(query) {
   return await api.get(host + endpoints.search(query));
+}
+
+export async function myWines(userId) {
+  return await api.get(host + endpoints.mywines(userId))
 }

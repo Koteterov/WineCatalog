@@ -1,7 +1,4 @@
 body {
-    /* background-image: url('../images/Wine-Background.webp');
-    background-size:contain */
-    /* background-image: fixed;  */
     background-color: rgb(153, 107, 107)
 }
 
@@ -74,7 +71,7 @@ footer {
     width: 100%;
     left: 0;
     bottom: 0;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     color: #c5c6c7;
     font-weight: bold;
@@ -98,8 +95,8 @@ nav a:hover {
 }
 
 nav > img {
-    width: 90px;
-    height: 80px;
+    width: 55px;
+    height: 65px;
     margin-left: 0.2em;
     margin-right: 0.2em;
 }

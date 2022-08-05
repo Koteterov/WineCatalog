@@ -9,7 +9,7 @@ const homeTemplate = () => html`
       <div class="wine-img">
         <img src="./images/Wine-Home.webp" />
       </div>
-      <h2 id="loginPrompt"><a href="/login">Login</a> to add, edit and delete wines!</h2>
+      <h2 id="loginPrompt">Please, <a href="/login">login</a> to add, edit and delete wines!</h2>
     </div>
   </section>
 `;
