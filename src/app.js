@@ -8,7 +8,7 @@ import { registerPage } from "./views/register.js";
 import { detailsPage } from "./views/details.js";
 import { createPage } from "./views/create.js";
 import { editPage } from "./views/edit.js";
-import { myWinesPage} from "./views/mywines.js";
+import { myWinesPage } from "./views/mywines.js";
 import { searchPage } from "./views/search.js";
 
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
@@ -17,7 +17,7 @@ const main = document.getElementById("main-content");
 const welcomeSpan = document.querySelector("nav span");
 
 page(decorateContext);
-page(parseQueryString)
+page(parseQueryString);
 
 page("/index.html", "/");
 page("/", homePage);
@@ -27,8 +27,9 @@ page("/register", registerPage);
 page("/details/:id", detailsPage);
 page("/create", createPage);
 page("/edit/:id", editPage);
-page("/mywines", myWinesPage)
+page("/mywines", myWinesPage);
 page("/search", searchPage);
+page("*", notFound);
 
 setUserNav();
 page.start();
@@ -72,10 +73,10 @@ function setUserNav() {
 function parseQueryString(ctx, next) {
   ctx.query = {};
   if (ctx.querystring) {
-      const query = Object.fromEntries(ctx.querystring
-          .split('&')
-          .map(p => p.split('=')));
-      Object.assign(ctx.query, query);
+    const query = Object.fromEntries(
+      ctx.querystring.split("&").map((p) => p.split("="))
+    );
+    Object.assign(ctx.query, query);
   }
 
   next();
@@ -95,4 +96,8 @@ async function OnLogout() {
   page.redirect("/");
 
   setUserNav();
+}
+
+function notFound(ctx) {
+  ctx.render("404 Not Found");
 }
