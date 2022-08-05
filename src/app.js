@@ -29,7 +29,7 @@ page("/create", createPage);
 page("/edit/:id", editPage);
 page("/mywines", myWinesPage);
 page("/search", searchPage);
-page("*", notFound);
+// page("*", notFound);
 
 setUserNav();
 page.start();

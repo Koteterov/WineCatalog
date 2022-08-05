@@ -2,7 +2,6 @@ import { html, repeat, nothing } from "../lib.js";
 import { search } from "../api/data.js";
 import { notify } from "../app.js";
 
-
 const searchTemplate = (onClick, data, searchInput, user) => html`
   <section id="searchPage">
     <h1>Search by Name</h1>
@@ -48,7 +47,7 @@ const searchTemplate = (onClick, data, searchInput, user) => html`
 
 
 export async function searchPage(ctx) {
-  const searchInput = ctx.querystring.split("=")[1];
+  const searchInput = ctx.query.query;
   const data = searchInput == undefined ? [] : await search(searchInput);
   const user = ctx.user;
 

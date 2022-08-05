@@ -53,7 +53,7 @@ export async function registerPage(ctx) {
         await register(email, password)
         ctx.setUserNav()
 
-        document.querySelector("button").disabled = true
+        // document.querySelector("button").disabled = true
 
         ctx.page.redirect('/')
   

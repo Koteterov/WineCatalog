@@ -45,7 +45,7 @@ export async function loginPage(ctx) {
       try {
         await login(email, password);
         ctx.setUserNav();
-        document.querySelector("button").disabled = true
+        // document.querySelector("button").disabled = true
         
         ctx.page.redirect("/");
       } catch (error) {
