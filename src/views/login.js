@@ -30,8 +30,6 @@ const loginTemplate = (onSubmit) => html `
 export async function loginPage(ctx) {
     ctx.render(loginTemplate(onSubmit));
   
-  
-  
     async function onSubmit(e) {
       e.preventDefault();
   
@@ -47,6 +45,8 @@ export async function loginPage(ctx) {
       try {
         await login(email, password);
         ctx.setUserNav();
+        document.querySelector("button").disabled = true
+        
         ctx.page.redirect("/");
       } catch (error) {
         notify(error.message);
