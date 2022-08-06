@@ -67,3 +67,22 @@ export async function search(query) {
 export async function myWines(userId) {
   return await api.get(host + endpoints.mywines(userId))
 }
+
+export async function like(wineId) {
+  return await api.post(host + `/data/likes`, wineId);
+}
+
+export async function getTotalLikes(wineId) {
+  return await api.get(
+    host +
+      `/data/likes?where=wineId%3D%22${wineId}%22&distinct=_ownerId&count`
+  );
+}
+
+
+export async function getUserLike(wineId, userId) {
+  return await api.get(
+    host +
+      `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`
+  );
+}
