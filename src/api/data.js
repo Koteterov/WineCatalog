@@ -7,7 +7,7 @@ export const login = api.login;
 export const register = api.register;
 export const logout = api.logout;
 
-const pageSize = 3
+const pageSize = 3;
 const endpoints = {
   register: "/users/register",
   login: "/users/login",
@@ -18,11 +18,14 @@ const endpoints = {
   delete: (id) => `/data/wines/${id}`,
   search: (query) => `/data/wines?where=name%20LIKE%20%22${query}%22`,
   wines: `/data/wines?pageSize=${pageSize}&offset=`,
-  size: '/data/wines?count',
-  mywines: (userId) => `/data/wines?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
-
-
-
+  size: "/data/wines?count",
+  mywines: (userId) =>
+    `/data/wines?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`,
+  like: "/data/likes",
+  allLikes: (wineId) =>
+    `/data/likes?where=wineId%3D%22${wineId}%22&distinct=_ownerId&count`,
+  myLikes: (wineId, userId) =>
+    `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`,
 };
 
 // to get all items with pages
@@ -31,12 +34,12 @@ export async function getAllWines(page) {
   let sizeUrl = endpoints.size;
   const [data, size] = await Promise.all([
     api.get(host + dataUrl),
-    api.get(host + sizeUrl)
-]);
-return {
+    api.get(host + sizeUrl),
+  ]);
+  return {
     data,
-    pages: Math.ceil(size / pageSize)
-};
+    pages: Math.ceil(size / pageSize),
+  };
 }
 
 // to get all items without pages
@@ -65,24 +68,17 @@ export async function search(query) {
 }
 
 export async function myWines(userId) {
-  return await api.get(host + endpoints.mywines(userId))
+  return await api.get(host + endpoints.mywines(userId));
 }
 
 export async function like(wineId) {
-  return await api.post(host + `/data/likes`, wineId);
+  return await api.post(host + endpoints.like, wineId);
 }
 
 export async function getTotalLikes(wineId) {
-  return await api.get(
-    host +
-      `/data/likes?where=wineId%3D%22${wineId}%22&distinct=_ownerId&count`
-  );
+  return await api.get(host + endpoints.allLikes(wineId));
 }
 
-
 export async function getUserLike(wineId, userId) {
-  return await api.get(
-    host +
-      `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`
-  );
+  return await api.get(host + endpoints.myLikes(wineId, userId));
 }
