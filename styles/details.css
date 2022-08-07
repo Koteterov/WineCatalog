@@ -4,7 +4,7 @@
     margin: 30px auto;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0px 0px 1.5px 3px gray;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .wineCover {
@@ -25,7 +25,7 @@
 }
 
 .wineText h1 {
-    color:gainsboro;
+    color: gainsboro;
     font-weight: bolder;
     font-size: 28px;
 }
@@ -51,7 +51,7 @@
     color: white;
 }
 
-.wineText > p {
+.wineText>p {
     height: auto;
     width: 100%;
     color: #cac1c1;
@@ -61,7 +61,7 @@
     margin-right: 20px;
 }
 
-.actionBtn  {
+.actionBtn {
     display: flex;
     text-align: center;
     left: auto;
@@ -70,21 +70,21 @@
     bottom: 0;
 }
 
-.actionBtn > a {
-	width: 200px;
-	height: 50px;
-	cursor: pointer;
-	border: none;
+.actionBtn>a {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
     border-radius: 10px;
-	display: inline;
-	align-items: center;
-	justify-content: center;
-	background-color: #1b2845;
-	background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
-	background-size: 200% 100%;
-	background-position: left;
-	background-repeat: no-repeat;
-	transition: 500ms;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    background-size: 200% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition: 500ms;
     color: white;
     font-family: "Lato";
     font-size: 20px;
@@ -95,8 +95,8 @@
     margin-right: 15px;
 }
 
-.actionBtn > a:hover {
-	background-position: right;
+.actionBtn>a:hover {
+    background-position: right;
 }
 
 .likes {
@@ -106,7 +106,7 @@
 }
 
 .details span.likes {
-	display: flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -120,4 +120,47 @@ img.hearts {
 
 #likes {
     margin-right: 10px;
+}
+
+.create-comment {
+    margin-top: 60px;
+    margin-bottom: 90px;
+    position: relative;
+    text-align: center;
+    width: 700px;
+    height: auto;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #1b1f24;
+}
+
+.btn-submit {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    font-family: "Lato";
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.comment p {
+    padding: 16px;
+    font-family: 'Lato';
+    color: #cac1c1;
+    line-height: 1.6em;
+    font-size: 18px;
+}
+
+.no-comment {
+    font-family: 'Lato';
+    font-size: 40px;
+    font-weight: bolder;
+    color: #45a29e;
+    text-align: center;
 }

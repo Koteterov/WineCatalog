@@ -5,7 +5,14 @@ import { like } from "../api/data.js";
 import { getUserLike } from "../api/data.js";
 import { getTotalLikes } from "../api/data.js";
 
-const detailsTemplate = (data, isCreator, onDelete, showLikeBtn, onLike, totalLikes) => html`
+const detailsTemplate = (
+  data,
+  isCreator,
+  onDelete,
+  showLikeBtn,
+  onLike,
+  totalLikes
+) => html`
   <section id="detailsPage">
     <div class="wrapper">
       <div class="wineCover">
@@ -32,9 +39,13 @@ const detailsTemplate = (data, isCreator, onDelete, showLikeBtn, onLike, totalLi
             : nothing}
           <div class="actionBtn">
             ${showLikeBtn
-              ? html`<a @click=${onLike} id="likes" class="button" href="javascript:void(0)"
-                  >Like</a>
-                  `
+              ? html`<a
+                  @click=${onLike}
+                  id="likes"
+                  class="button"
+                  href="javascript:void(0)"
+                  >Like</a
+                > `
               : nothing}
           </div>
           <div class="likes">
@@ -44,6 +55,30 @@ const detailsTemplate = (data, isCreator, onDelete, showLikeBtn, onLike, totalLi
         </div>
       </div>
     </div>
+
+    <!-- Bonus ( for Guests and Users ) -->
+    <div class="details-comments">
+      <h2>Comments:</h2>
+      <ul>
+        <!-- list all comments for current game (If any) -->
+        <li class="comment">
+          <p>Content: I rate this one quite highly.</p>
+        </li>
+        <li class="comment">
+          <p>Content: The best game.</p>
+        </li>
+      </ul>
+      <!-- Display paragraph: If there are no games in the database -->
+      <p class="no-comment">No comments.</p>
+    </div>
+
+    <article class="create-comment">
+      <label>Add new comment:</label>
+      <form class="form">
+        <textarea name="comment" placeholder="Comment......"></textarea>
+        <input class="btn-submit" type="submit" value="Add Comment" />
+      </form>
+    </article>
   </section>
 `;
 
@@ -58,28 +93,23 @@ export async function detailsPage(ctx) {
   //   getUserLike(bookId,user)
 
   // ])
-  
-
 
   //==========
-  const [data, totalLikes, didUserLike] = await Promise.all ([
+  const [data, totalLikes, didUserLike] = await Promise.all([
     getSingleWine(wineId),
     getTotalLikes(wineId),
-    getUserLike(wineId, user)
-
-  ])
+    getUserLike(wineId, user),
+  ]);
   const creator = user == data._ownerId;
-  const showLikeBtn = didUserLike == 0 && user && !creator
+  const showLikeBtn = didUserLike == 0 && user && !creator;
 
-
-  console.log('wineId', wineId);
+  console.log("wineId", wineId);
 
   const isCreator = user == data._ownerId;
 
-
-  ctx.render(detailsTemplate(data, isCreator, onDelete, showLikeBtn, onLike, totalLikes));
-
-
+  ctx.render(
+    detailsTemplate(data, isCreator, onDelete, showLikeBtn, onLike, totalLikes)
+  );
 
   async function onDelete() {
     const confirmed = confirm("Are you sure you want to delete this wine?");
@@ -90,11 +120,8 @@ export async function detailsPage(ctx) {
     }
   }
   async function onLike() {
-   let res = await like({wineId})
+    let res = await like({ wineId });
 
-
-
-    ctx.page.redirect(`/details/${wineId}`)
+    ctx.page.redirect(`/details/${wineId}`);
   }
-
 }
