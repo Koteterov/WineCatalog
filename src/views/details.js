@@ -74,7 +74,7 @@ const detailsTemplate = (
                 </li>
               `
             )}
-        }
+        
       </ul>
     </div>
     ${showCommentSection
@@ -150,7 +150,7 @@ export async function detailsPage(ctx) {
       e.target.reset();
 
       ctx.page.redirect(`/details/${wineId}`);
-      // ctx.page.redirect(`/catalog`);
+      
     } catch (error) {
       notify(error.message);
     }

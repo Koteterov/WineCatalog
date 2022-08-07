@@ -12,6 +12,9 @@
     color: #ffffff;
     display: none;
     text-align: right;
+    position: fixed;
+    top: 15%;
+    right: 37%;
 }
 
 .notification>span {
