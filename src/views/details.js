@@ -65,17 +65,16 @@ const detailsTemplate = (
     <div class="details-comments">
       <h2>Comments:</h2>
       <ul>
-        ${comments.length > 0
-          ? repeat(
-              comments,
-              (i) => i._id,
-              (comments) => html`
+        ${comments.length == 0
+          ? html`<p class="no-comment">No comments.</p>`
+          : comments.map(
+              (c) => html`
                 <li class="comment">
-                  <p>Content: ${comments.comment}</p>
+                  <p>Content: ${c.comment}</p>
                 </li>
               `
-            )
-          : html`<p class="no-comment">No comments.</p>`}
+            )}
+        }
       </ul>
     </div>
     ${showCommentSection
@@ -107,9 +106,6 @@ export async function detailsPage(ctx) {
   const showLikeBtn = didUserLike == 0 && user && !creator;
   const showCommentSection = user && !creator;
   const isCreator = user == data._ownerId;
-
-  console.log("comments", comments);
-  console.log("showCommentSection", showCommentSection);
 
   ctx.render(
     detailsTemplate(
@@ -149,11 +145,12 @@ export async function detailsPage(ctx) {
       if (comment == "") {
         throw new Error("Please fill in !");
       }
-      const res = await addComment({ wineId, comment });
-      console.log("ot addComment", res);
+      await addComment({ wineId, comment });
 
       e.target.reset();
+
       ctx.page.redirect(`/details/${wineId}`);
+      // ctx.page.redirect(`/catalog`);
     } catch (error) {
       notify(error.message);
     }
