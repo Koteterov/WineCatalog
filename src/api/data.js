@@ -26,6 +26,8 @@ const endpoints = {
     `/data/likes?where=wineId%3D%22${wineId}%22&distinct=_ownerId&count`,
   myLikes: (wineId, userId) =>
     `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`,
+  comment: (id) => `/data/comments?where=wineId%3D%22${id}%22`,
+  add: "/data/comments",
 };
 
 // to get all items with pages
@@ -81,4 +83,12 @@ export async function getTotalLikes(wineId) {
 
 export async function getUserLike(wineId, userId) {
   return await api.get(host + endpoints.myLikes(wineId, userId));
+}
+
+export async function getComment(id) {
+  return await api.get(host + endpoints.comment(id));
+}
+
+export async function addComment(data) {
+  return await api.post(host + endpoints.add, data);
 }

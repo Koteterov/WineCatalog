@@ -1,9 +1,12 @@
-import { html, nothing } from "../lib.js";
+import { html, nothing, repeat } from "../lib.js";
 import { getSingleWine } from "../api/data.js";
 import { deleteWine } from "../api/data.js";
 import { like } from "../api/data.js";
 import { getUserLike } from "../api/data.js";
 import { getTotalLikes } from "../api/data.js";
+import { notify } from "../app.js";
+import { getComment } from "../api/data.js";
+import { addComment } from "../api/data.js";
 
 const detailsTemplate = (
   data,
@@ -11,7 +14,10 @@ const detailsTemplate = (
   onDelete,
   showLikeBtn,
   onLike,
-  totalLikes
+  totalLikes,
+  comments,
+  onSubmit,
+  showCommentSection
 ) => html`
   <section id="detailsPage">
     <div class="wrapper">
@@ -56,29 +62,33 @@ const detailsTemplate = (
       </div>
     </div>
 
-    <!-- Bonus ( for Guests and Users ) -->
     <div class="details-comments">
       <h2>Comments:</h2>
       <ul>
-        <!-- list all comments for current game (If any) -->
-        <li class="comment">
-          <p>Content: I rate this one quite highly.</p>
-        </li>
-        <li class="comment">
-          <p>Content: The best game.</p>
-        </li>
+        ${comments.length > 0
+          ? repeat(
+              comments,
+              (i) => i._id,
+              (comments) => html`
+                <li class="comment">
+                  <p>Content: ${comments.comment}</p>
+                </li>
+              `
+            )
+          : html`<p class="no-comment">No comments.</p>`}
       </ul>
-      <!-- Display paragraph: If there are no games in the database -->
-      <p class="no-comment">No comments.</p>
     </div>
-
-    <article class="create-comment">
-      <label>Add new comment:</label>
-      <form class="form">
-        <textarea name="comment" placeholder="Comment......"></textarea>
-        <input class="btn-submit" type="submit" value="Add Comment" />
-      </form>
-    </article>
+    ${showCommentSection
+      ? html`
+          <article class="create-comment">
+            <label>Add new comment:</label>
+            <form @submit=${onSubmit} class="form">
+              <textarea name="comment" placeholder="Comment......"></textarea>
+              <input class="btn-submit" type="submit" value="Add Comment" />
+            </form>
+          </article>
+        `
+      : nothing}
   </section>
 `;
 
@@ -86,29 +96,33 @@ export async function detailsPage(ctx) {
   const user = ctx.user;
   const wineId = ctx.params.id;
 
-  //===========
-  // const [book, totalLikes, didUserLike] = await Promise.all ([
-  //   getSingleBook(bookId),
-  //   getTotalLikes(bookId),
-  //   getUserLike(bookId,user)
-
-  // ])
-
-  //==========
-  const [data, totalLikes, didUserLike] = await Promise.all([
+  const [data, totalLikes, didUserLike, comments] = await Promise.all([
     getSingleWine(wineId),
     getTotalLikes(wineId),
     getUserLike(wineId, user),
+    getComment(wineId),
   ]);
   const creator = user == data._ownerId;
+
   const showLikeBtn = didUserLike == 0 && user && !creator;
-
-  console.log("wineId", wineId);
-
+  const showCommentSection = user && !creator;
   const isCreator = user == data._ownerId;
 
+  console.log("comments", comments);
+  console.log("showCommentSection", showCommentSection);
+
   ctx.render(
-    detailsTemplate(data, isCreator, onDelete, showLikeBtn, onLike, totalLikes)
+    detailsTemplate(
+      data,
+      isCreator,
+      onDelete,
+      showLikeBtn,
+      onLike,
+      totalLikes,
+      comments,
+      onSubmit,
+      showCommentSection
+    )
   );
 
   async function onDelete() {
@@ -120,8 +134,28 @@ export async function detailsPage(ctx) {
     }
   }
   async function onLike() {
-    let res = await like({ wineId });
+    await like({ wineId });
 
     ctx.page.redirect(`/details/${wineId}`);
+  }
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const comment = formData.get("comment").trim();
+
+    try {
+      if (comment == "") {
+        throw new Error("Please fill in !");
+      }
+      const res = await addComment({ wineId, comment });
+      console.log("ot addComment", res);
+
+      e.target.reset();
+      ctx.page.redirect(`/details/${wineId}`);
+    } catch (error) {
+      notify(error.message);
+    }
   }
 }

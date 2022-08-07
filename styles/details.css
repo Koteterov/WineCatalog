@@ -4,7 +4,7 @@
     margin: 30px auto;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0px 0px 1.5px 3px gray;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 .wineCover {
@@ -123,13 +123,13 @@ img.hearts {
 }
 
 .create-comment {
-    margin-top: 60px;
+    margin-top: 15px;
     margin-bottom: 90px;
     position: relative;
     text-align: center;
     width: 700px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 40px;
     box-sizing: border-box;
     background: #1b1f24;
@@ -150,11 +150,13 @@ img.hearts {
 }
 
 .comment p {
-    padding: 16px;
+    padding: 5px;
     font-family: 'Lato';
     color: #cac1c1;
     line-height: 1.6em;
     font-size: 18px;
+    margin-bottom: 0px;
+    text-align: center;
 }
 
 .no-comment {
@@ -163,4 +165,10 @@ img.hearts {
     font-weight: bolder;
     color: #45a29e;
     text-align: center;
+    margin-bottom: 120px;
+
+}
+
+.details-comments ul {
+    padding-bottom: 50px;
 }
