@@ -28,6 +28,8 @@ const endpoints = {
     `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`,
   comment: (id) => `/data/comments?where=wineId%3D%22${id}%22`,
   add: "/data/comments",
+  getLikes: `/data/likes`,
+  unlike: (id) => `/data/likes/${id}`,
 };
 
 // to get all items with pages
@@ -91,4 +93,11 @@ export async function getComment(id) {
 
 export async function addComment(data) {
   return await api.post(host + endpoints.add, data);
+}
+export async function getLikes() {
+  return await api.get(host + endpoints.getLikes);
+}
+
+export async function deleteLike(id) {
+  return await api.del(host + endpoints.unlike(id));
 }

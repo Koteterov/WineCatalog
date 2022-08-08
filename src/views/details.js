@@ -1,5 +1,5 @@
 import { html, nothing, repeat } from "../lib.js";
-import { getSingleWine } from "../api/data.js";
+import { deleteLike, getLikes, getSingleWine } from "../api/data.js";
 import { deleteWine } from "../api/data.js";
 import { like } from "../api/data.js";
 import { getUserLike } from "../api/data.js";
@@ -17,7 +17,9 @@ const detailsTemplate = (
   totalLikes,
   comments,
   onSubmit,
-  showCommentSection
+  showCommentSection,
+  onUnlike,
+  showUnlikeBtn
 ) => html`
   <section id="detailsPage">
     <div class="wrapper">
@@ -53,6 +55,15 @@ const detailsTemplate = (
                   >Like</a
                 > `
               : nothing}
+            ${showUnlikeBtn
+              ? html`<a
+                  @click=${onUnlike}
+                  id="likes"
+                  class="button"
+                  href="javascript:void(0)"
+                  >Unlike</a
+                > `
+              : nothing}
           </div>
           <div class="likes">
             <img class="hearts" src="/images/heart.png" />
@@ -74,7 +85,6 @@ const detailsTemplate = (
                 </li>
               `
             )}
-        
       </ul>
     </div>
     ${showCommentSection
@@ -95,15 +105,17 @@ export async function detailsPage(ctx) {
   const user = ctx.user;
   const wineId = ctx.params.id;
 
-  const [data, totalLikes, didUserLike, comments] = await Promise.all([
+  const [data, totalLikes, didUserLike, comments, likes] = await Promise.all([
     getSingleWine(wineId),
     getTotalLikes(wineId),
     getUserLike(wineId, user),
     getComment(wineId),
+    getLikes(),
   ]);
   const creator = user == data._ownerId;
 
   const showLikeBtn = didUserLike == 0 && user && !creator;
+  const showUnlikeBtn = didUserLike == 1 && user && !creator;
   const showCommentSection = user && !creator;
   const isCreator = user == data._ownerId;
 
@@ -117,7 +129,9 @@ export async function detailsPage(ctx) {
       totalLikes,
       comments,
       onSubmit,
-      showCommentSection
+      showCommentSection,
+      onUnlike,
+      showUnlikeBtn
     )
   );
 
@@ -131,6 +145,15 @@ export async function detailsPage(ctx) {
   }
   async function onLike() {
     await like({ wineId });
+
+    ctx.page.redirect(`/details/${wineId}`);
+  }
+
+  async function onUnlike() {
+    const wineToDelet = likes.find(
+      (w) => w.wineId == wineId && w._ownerId == user
+    );
+    await deleteLike(wineToDelet._id);
 
     ctx.page.redirect(`/details/${wineId}`);
   }
@@ -150,7 +173,6 @@ export async function detailsPage(ctx) {
       e.target.reset();
 
       ctx.page.redirect(`/details/${wineId}`);
-      
     } catch (error) {
       notify(error.message);
     }

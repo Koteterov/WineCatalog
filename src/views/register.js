@@ -43,11 +43,11 @@ export async function registerPage(ctx) {
   
       try {
         if (!email || !password) {
-          throw new Error("Please fill in all fields");
+          throw new Error("Please fill in all fields!");
         }
   
         if (password != rePassword) {
-          throw new Error("Paswords don't match");
+          throw new Error("Paswords don't match!");
         }
   
         await register(email, password)
