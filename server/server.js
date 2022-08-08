@@ -1337,7 +1337,7 @@
         wines: {
             "1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml Red Wine Ribeaupierre Syrah",
+                "name": "Red Wine Ribeaupierre Syrah",
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/Ribeaupierre-Syrah.png",
@@ -1348,7 +1348,7 @@
             },
             "2": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml Red Wine La Sasteria",
+                "name": "Red Wine La Sasteria",
                 "netQty": "0.75 l",
                 "origin": "Spain",
                 "imgUrl": "/images/Sasteria.png",
@@ -1359,7 +1359,7 @@
             },
             "3": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "750ml Red Wine Montepulcano d'Abruzzo",
+                "name": "Red Wine Montepulcano d'Abruzzo",
                 "netQty": "0.75 l",
                 "origin": "Italy",
                 "imgUrl": "/images/Montepulcano.png",
@@ -1370,7 +1370,7 @@
             },
             "4": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml White Wine Kalkstein Claus Jacob",
+                "name": "White Wine Kalkstein Claus Jacob",
                 "netQty": "0.75 l",
                 "origin": "Germany",
                 "imgUrl": "/images/Kalkstein-Riesling.png",
@@ -1381,7 +1381,7 @@
             },
             "5": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml White Wine Green Cape",
+                "name": "White Wine Green Cape",
                 "netQty": "0.75 l",
                 "origin": "South Africa",
                 "imgUrl": "/images/GreenCape-SovBlanc.png",
@@ -1392,7 +1392,7 @@
             },
             "6": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml White Wine Ribeaupierre Sov Blanc",
+                "name": "White Wine Ribeaupierre Sov Blanc",
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/Ribeaupierre-SovBlanc.png",
@@ -1403,7 +1403,7 @@
             },
             "7": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml Rose Wine La Sasteria",
+                "name": "Rose Wine La Sasteria",
                 "netQty": "0.75 l",
                 "origin": "Spain",
                 "imgUrl": "/images/Sasteria-Rose.png",
@@ -1414,7 +1414,7 @@
             },
             "8": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "750ml Rose Wine Les Haytieres",
+                "name": "Rose Wine Les Haytieres",
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/LesHaytieres-Rose.png",
@@ -1425,7 +1425,7 @@
             },
             "9": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "750ml Rose Wine Ribeaupierre",
+                "name": "Rose Wine Ribeaupierre",
                 "netQty": "0.75 l",
                 "origin": "France",
                 "imgUrl": "/images/Ribeaupierre-Rose.png",

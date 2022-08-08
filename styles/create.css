@@ -3,7 +3,7 @@ fieldset {
   margin: 1em auto;
   padding: 2em;
   width: 25em;
-  border-radius: 2px;
+  border-radius: 15px;
   border-color: #2d333b;
   background: #1b1f24;
   box-shadow: 0 2px 2px #131518;
@@ -21,6 +21,7 @@ fieldset legend {
   border-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #2d333b 50%) 1 round;
   border-width: 1px;
   border-style: solid;
+  border-radius: 15px;
   display: block;
   width: 100%;
   margin: 0 auto;
