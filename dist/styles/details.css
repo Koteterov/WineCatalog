@@ -1,0 +1,177 @@
+.wrapper {
+    height: 400px;
+    width: 1000px;
+    margin: 30px auto;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0px 0px 1.5px 3px gray;
+    margin-bottom: 40px;
+}
+
+.wineCover {
+    float: left;
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+}
+
+.wineCover img {
+    border-radius: 12px 0 0 7px;
+    height: 100%;
+}
+
+.wineText {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.wineText h1 {
+    color: gainsboro;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+.wineText h3 {
+    margin: 18px 0 47px 18px;
+    font-size: 18px;
+    color: #cac1c1;
+    letter-spacing: 0.2em;
+    margin-bottom: 0;
+}
+
+.wineText h4 {
+    margin: 8px 0 10px 18px;
+    font-size: 18px;
+    color: #cac1c1;
+    letter-spacing: 0.2em;
+}
+
+.wineText h5 {
+    margin: 8px 0 10px 14px;
+    font-size: 16px;
+    color: white;
+}
+
+.wineText>p {
+    height: auto;
+    width: 100%;
+    color: #cac1c1;
+    line-height: 1.6em;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.actionBtn {
+    display: flex;
+    text-align: center;
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
+}
+
+.actionBtn>a {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    background-size: 200% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition: 500ms;
+    color: white;
+    font-family: "Lato";
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.actionBtn>a:hover {
+    background-position: right;
+}
+
+.likes {
+    font-size: 20px;
+    text-align: center;
+    color: gainsboro;
+    margin-top: 18px;
+    margin-left: 7px;
+    margin-right: 170px;
+}
+
+.details span.likes {
+    display: flex;
+    flex-direction: column;
+}
+
+img.hearts {
+    width: 32px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    padding-top: 9px;
+}
+
+#likes {
+    margin-right: 10px;
+}
+
+.create-comment {
+    margin-top: 15px;
+    margin-bottom: 90px;
+    position: relative;
+    text-align: center;
+    width: 700px;
+    height: auto;
+    border-radius: 15px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #1b1f24;
+}
+
+.btn-submit {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    font-family: "Lato";
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.comment p {
+    padding: 5px;
+    font-family: 'Lato';
+    color: #cac1c1;
+    line-height: 1.6em;
+    font-size: 18px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.no-comment {
+    font-family: 'Lato';
+    font-size: 40px;
+    font-weight: bolder;
+    color: #45a29e;
+    text-align: center;
+    margin-bottom: 120px;
+
+}
+
+.details-comments ul {
+    padding-bottom: 50px;
+}

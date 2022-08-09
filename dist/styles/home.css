@@ -1,0 +1,112 @@
+body {
+    background-color: rgb(153, 107, 107)
+}
+
+
+.wine-img {
+  display: flex;
+  box-shadow: 2px 5px 13px 0px #000000, 8px -15px 31px -12px rgb(0 0 0 / 0%);
+}
+
+#loginPrompt {
+    text-shadow: none;
+    color: white;
+}
+
+#loginPrompt, a {
+text-decoration: none;
+}
+
+nav,
+footer {
+    background-color: #0B0C10;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+    padding: 0 5px 0 3px;
+    margin: 0%;
+    color: white;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    margin: 20px;
+}
+nav span {
+    font-size: 20px;
+    color: rgb(234, 110, 110);
+    font-weight: bolder;
+
+}
+
+nav ul {
+    margin: 0 0 0 auto;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 2px;
+}
+
+li::before {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    color: #c5c6c7;
+    font-weight: bold;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #45a29e;
+    font-weight: bolder;
+}
+
+#welcomePage {
+    color:white;
+    font-size: 24px;
+    padding: 30px;
+    margin: 10px;
+}
+
+#welcomePage img {
+    width: 38%;
+}
+
+nav > img {
+    width: 55px;
+    height: 65px;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-radius: 5px;
+}
+
+#welcomeMsg {
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    text-align: right;
+    margin-top: 9px;
+    margin-right: 24px;
+}

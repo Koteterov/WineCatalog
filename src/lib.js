@@ -1,6 +1,9 @@
-import { html, render, nothing } from 'https://unpkg.com/lit-html?module';
-import { repeat } from 'https://unpkg.com/lit-html/directives/repeat.js?module';
-import page from "//unpkg.com/page/page.mjs";
+// import { html, render, nothing } from 'lit-html';
+// import { repeat } from 'lit-html/directives';
+// import page from "page";
 
+import { html, render, nothing } from "../node_modules/lit-html/lit-html.js";
+import { repeat } from "../node_modules/lit-html/directives/repeat.js";
+import page from "../node_modules/page/page.mjs";
 
 export { html, render, nothing, repeat, page };
