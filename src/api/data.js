@@ -28,7 +28,7 @@ const endpoints = {
     `/data/likes?where=wineId%3D%22${wineId}%22%20and%20_ownerId%3D%22${userId}%22&count`,
   comment: (id) => `/data/comments?where=wineId%3D%22${id}%22`,
   add: "/data/comments",
-  getLikes: `/data/likes`,
+  getLikes: (wineId) => `/data/likes?where=wineId%3D%22${wineId}%22`,
   unlike: (id) => `/data/likes/${id}`,
 };
 
@@ -94,8 +94,8 @@ export async function getComment(id) {
 export async function addComment(data) {
   return await api.post(host + endpoints.add, data);
 }
-export async function getLikes() {
-  return await api.get(host + endpoints.getLikes);
+export async function getLikes(wineId) {
+  return await api.get(host + endpoints.getLikes(wineId));
 }
 
 export async function deleteLike(id) {

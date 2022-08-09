@@ -98,6 +98,6 @@ async function OnLogout() {
   setUserNav();
 }
 
-function notFound(ctx) {
-  ctx.render("404 Not Found");
-}
+// function notFound(ctx) {
+//   ctx.render("404 Not Found");
+// }

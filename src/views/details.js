@@ -110,7 +110,7 @@ export async function detailsPage(ctx) {
     getTotalLikes(wineId),
     getUserLike(wineId, user),
     getComment(wineId),
-    getLikes(),
+    getLikes(wineId),
   ]);
   const creator = user == data._ownerId;
 
