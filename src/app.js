@@ -14,7 +14,7 @@ import { searchPage } from "./views/search.js";
 document.getElementById("logoutBtn").addEventListener("click", OnLogout);
 
 const main = document.getElementById("main-content");
-const welcomeSpan = document.querySelector("nav span");
+const welcomeSpan = document.querySelector("span");
 
 page(decorateContext);
 page(parseQueryString);
