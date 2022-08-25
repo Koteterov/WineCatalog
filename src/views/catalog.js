@@ -33,12 +33,18 @@ const catalogTemplate = (data, user, page, pages) => html`
   </section>
 `;
 
-
 export async function catalogPage(ctx) {
+  ctx.render(until(catalogWrapper(ctx), 'Loading ...'));
+
+}
+
+export async function catalogWrapper(ctx) {
   const user = ctx.user;
 
   const page = Number(ctx.query.page) || 1;
   const {data, pages} = await getAllWines(page)
 
-  ctx.render(until(catalogTemplate(data, user, page, pages), "Loading"));
+  return (catalogTemplate(data, user, page, pages));
 }
+
+
