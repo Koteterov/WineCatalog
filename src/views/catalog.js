@@ -40,5 +40,5 @@ export async function catalogPage(ctx) {
   const page = Number(ctx.query.page) || 1;
   const {data, pages} = await getAllWines(page)
 
-  ctx.render(catalogTemplate(data, user, page, pages));
+  ctx.render(until(catalogTemplate(data, user, page, pages), "Loading"));
 }
