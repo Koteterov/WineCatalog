@@ -17,7 +17,7 @@
     </div>
   </section>
 `)(t))})),xe("/catalog",(async function(e){e.render(z(async function(e){const t=e.user,n=Number(e.query.page)||1,{data:i,pages:s}=await async function(e){let t="/data/wines?pageSize=3&offset="+3*(e-1);const[n,i]=await Promise.all([ke(Se+t),ke(Se+"/data/wines?count")]);return{data:n,pages:Math.ceil(i/3)}}(n);return((e,t,n,i)=>V`
-  <section id="catalogPage">
+  <section class="catalogPage">
     <h1>All Wines</h1>
   <div id="pagination">
     ${n>1?V`<a href="?page=${n-1}">&lt; Prev</a>`:V`<a>&lt; Prev</a>`}
@@ -42,7 +42,7 @@
     </div>
   </div>`)):V` <p>No Wines in Catalog!</p> `}
   </section>
-`)(i,t,n,s)}(e),V`<h2>Loading...</h2>`))})),xe("/login",(async function(e){e.render(V`
+`)(i,t,n,s)}(e),V`<h1 class="catalogPage">Loading...</h1>`))})),xe("/login",(async function(e){e.render(V`
         <section id="loginPage">
             <form @submit=${async function(t){t.preventDefault();const n=new FormData(t.target),i=n.get("email").trim(),s=n.get("password").trim();if(i&&s)try{await async function(e,t){const n=await Pe($e.host+"/users/login",{email:e,password:t});return sessionStorage.setItem("email",n.email),sessionStorage.setItem("authToken",n.accessToken),sessionStorage.setItem("userId",n._id),n}(i,s),e.setUserNav(),e.page.redirect("/")}catch(e){He(e.message)}else He("Please fill in both fields!")}}>
                 <fieldset>
