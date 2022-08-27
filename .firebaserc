@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "wine-catalog-a3484"
-  }
+    "default": "wine-catalog-project",
+    "production": "wine-catalog-project"
+  },
+  "targets": {},
+  "etags": {}
 }
