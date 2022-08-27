@@ -34,7 +34,7 @@ const catalogTemplate = (data, user, page, pages) => html`
 `;
 
 export async function catalogPage(ctx) {
-  ctx.render(until(catalogWrapper(ctx), 'Loading ...'));
+  ctx.render(until(catalogWrapper(ctx), html `<h2>Loading...</h2>`));
 
 }
 
