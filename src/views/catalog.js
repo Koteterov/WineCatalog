@@ -2,7 +2,7 @@ import { html, repeat, nothing, until } from "../lib.js";
 import { getAllWines } from "../api/data.js";
 
 const catalogTemplate = (data, user, page, pages) => html`
-  <section class="catalogPage">
+  <section id="catalogPage">
     <h1>All Wines</h1>
   <div id="pagination">
     ${page > 1 ? html`<a href="?page=${page - 1}">&lt; Prev</a>` : html`<a>&lt; Prev</a>`}
@@ -43,6 +43,7 @@ export async function catalogWrapper(ctx) {
 
   const page = Number(ctx.query.page) || 1;
   const {data, pages} = await getAllWines(page)
+  console.log(1111);
 
   return (catalogTemplate(data, user, page, pages));
 }

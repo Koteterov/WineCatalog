@@ -8,7 +8,7 @@ const editTemplate = (wine, onSubmit) => html`
   <section class="editPage">
     <form @submit=${onSubmit}>
       <fieldset>
-        <legend>Edit Album</legend>
+        <legend>Edit Wine</legend>
 
         <div class="container">
           <label for="name" class="vhide">Product name</label>
