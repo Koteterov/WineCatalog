@@ -42,7 +42,7 @@
     </div>
   </div>`)):V` <p>No Wines in Catalog!</p> `}
   </section>
-`)(i,t,n,s)}(e),V`<h1 class="catalogPage">Loading...</h1>`))})),xe("/login",(async function(e){e.render(V`
+`)(i,t,n,s)}(e),V`<h1 id="loading">Loading...</h1>`))})),xe("/login",(async function(e){e.render(V`
         <section id="loginPage">
             <form @submit=${async function(t){t.preventDefault();const n=new FormData(t.target),i=n.get("email").trim(),s=n.get("password").trim();if(i&&s)try{await async function(e,t){const n=await Pe($e.host+"/users/login",{email:e,password:t});return sessionStorage.setItem("email",n.email),sessionStorage.setItem("authToken",n.accessToken),sessionStorage.setItem("userId",n._id),n}(i,s),e.setUserNav(),e.page.redirect("/")}catch(e){He(e.message)}else He("Please fill in both fields!")}}>
                 <fieldset>
