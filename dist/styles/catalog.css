@@ -57,13 +57,18 @@
 	transition: 500ms;
 }
 
-#catalogPage h1{
+.catalogPage h1{
     color: white;
     text-align: center;
     margin-top: 30px;
     font-size: 26px;
     font-family: 'Lato';
     text-shadow: 5px 2px black;
+}
+
+#loading {
+    color: white;
+    text-align: center;
 }
 
 #pagination {
