@@ -4,17 +4,12 @@ body {
 
 
 .wine-img {
-  display: flex;
-  box-shadow: 2px 5px 13px 0px #000000, 8px -15px 31px -12px rgb(0 0 0 / 0%);
+    display: flex;
 }
 
-#loginPrompt {
-    text-shadow: none;
-    color: white;
-}
-
-#loginPrompt, a {
-text-decoration: none;
+#loginPrompt>a {
+    text-decoration: none;
+    color: red;
 }
 
 nav,
@@ -39,6 +34,7 @@ nav a {
     position: relative;
     margin: 20px;
 }
+
 nav span {
     font-size: 20px;
     color: rgb(234, 110, 110);
@@ -84,17 +80,20 @@ nav a:hover {
 }
 
 #welcomePage {
-    color:white;
+    color: white;
     font-size: 24px;
-    padding: 30px;
-    margin: 10px;
+    padding: 100px;
+    margin: -10px;
+    background-image: url("/images/barrels.jpg");
+    background-size: cover;
+    height: 730px;
 }
 
 #welcomePage img {
     width: 38%;
 }
 
-nav > img {
+nav>img {
     width: 55px;
     height: 65px;
     margin-left: 0.2em;
@@ -107,6 +106,12 @@ nav > img {
     font-weight: bolder;
     color: white;
     text-align: right;
-    margin-top: 9px;
+    margin-top: -15px;
     margin-right: 24px;
+}
+
+#welcomeMsg > span {
+    background-color: #a52121;
+    padding: 5px;
+    border-radius: 10px;
 }

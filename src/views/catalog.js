@@ -42,10 +42,15 @@ export async function catalogWrapper(ctx) {
   const user = ctx.user;
 
   const page = Number(ctx.query.page) || 1;
-  const {data, pages} = await getAllWines(page)
-  console.log(1111);
 
-  return (catalogTemplate(data, user, page, pages));
+  try {
+    const {data, pages} = await getAllWines(page)
+
+    return (catalogTemplate(data, user, page, pages));
+  
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 

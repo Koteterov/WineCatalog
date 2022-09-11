@@ -31,8 +31,14 @@ const myWinesTemplate = (data) => html`
 
 export async function myWinesPage(ctx) {
     const userId = ctx.user;
-    const myItems = await myWines(userId);
+
+    try {
+      const myItems = await myWines(userId);
   
-    ctx.render(myWinesTemplate(myItems));
+      ctx.render(myWinesTemplate(myItems));
+  
+    } catch (error) {
+      console.log(error);
+    }
   }
   
