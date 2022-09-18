@@ -12,7 +12,7 @@ REST service has been used and CRUD operations - GET, POST, PUT, DELETE have bee
 The application has the following parts:
 ### Home page
 * Guests can visit all other sections depending on the authentication status
-* They are prompted to log in in order to use the full functionality of the app.
+* They are prompted to log in in order to use the full functionality of the app
 ### Catalog
 * Pagination on server side has been implemented 
 * When logged in the user can check the product details
