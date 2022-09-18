@@ -83,10 +83,11 @@ nav a:hover {
     color: white;
     font-size: 24px;
     padding: 100px;
-    margin: -10px;
     background-image: url("/images/barrels.jpg");
     background-size: cover;
-    height: 730px;
+    height: 100vh;
+    width: 101%;
+    margin-top: -27px;
 }
 
 #welcomePage img {
@@ -106,12 +107,15 @@ nav>img {
     font-weight: bolder;
     color: white;
     text-align: right;
-    margin-top: -15px;
-    margin-right: 24px;
+    margin-right: 20px;
 }
 
 #welcomeMsg > span {
     background-color: #a52121;
     padding: 5px;
     border-radius: 10px;
+}
+
+#loading {
+    margin-top: 20px;
 }
