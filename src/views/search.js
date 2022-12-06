@@ -5,21 +5,26 @@ import { notify } from "../app.js";
 const searchTemplate = (onClick, data, searchInput, user) => html`
   <section id="searchPage">
     <h1>Search by Name</h1>
-    <div class="search">
-      <input
-        id="search-input"
-        type="text"
-        name="search"
-        placeholder="Enter desired wine's name"
-        .value=${searchInput || ""}
-      />
-      <button @click=${onClick} class="button-list">Search</button>
-    </div>
+    <form>
+      <div class="search">
+        <input
+          id="search-input"
+          type="text"
+          name="search"
+          placeholder="Enter desired wine's name"
+          .value=${searchInput || ""}
+        />
+        <button @click=${onClick} class="button-list">Search</button>
+      </div>
+    </form>
 
     <h2>Results:</h2>
     <div class="search-result">
       ${data.length > 0
-        ? repeat(data, (i) => i._id, (data) => html`
+        ? repeat(
+            data,
+            (i) => i._id,
+            (data) => html`
               <div class="card-box">
                 <img src=${data.imgUrl} />
                 <div>
@@ -33,18 +38,20 @@ const searchTemplate = (onClick, data, searchInput, user) => html`
                   <div class="btn-group">
                     ${user
                       ? html`
-                          <a href="/details/${data._id}" id="details">Details</a>
+                          <a href="/details/${data._id}" id="details"
+                            >Details</a
+                          >
                         `
                       : nothing}
                   </div>
                 </div>
               </div>
-            `)
+            `
+          )
         : html`<p class="no-result">No result.</p>`}
     </div>
   </section>
 `;
-
 
 export async function searchPage(ctx) {
   const searchInput = ctx.query.query;
