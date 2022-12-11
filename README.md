@@ -32,6 +32,7 @@ The application has the following parts:
 * In case the guest has no account, he can register at the Register Page
 * A mistake appears in case of an error
 ### Search
+![search](https://user-images.githubusercontent.com/102145445/206912914-f7122418-892b-46e6-bf1f-53ead26d2851.jpg)
 * Items can be searched by product name
 ### Create wine
 * If logged in, the user can add wine to the catalog 
