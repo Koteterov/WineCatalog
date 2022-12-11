@@ -22,6 +22,7 @@ The application has the following parts:
     * If he is NOT an owner he can like / unlike and make comments
 * If not logged in the quest can only see a list of products
 ### Login
+![login](https://user-images.githubusercontent.com/102145445/206912735-7c750db0-b702-4b69-a4e6-78f3d587950f.jpg)
 * To  use the full functionality, any guest should log in first
 * A mistake appears in case of an error
 * The application has two users preliminary registered which can be used for immediate testing: 
