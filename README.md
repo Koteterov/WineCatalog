@@ -21,6 +21,8 @@ The application has the following parts:
     * If he is an owner (i.e. has created the item) he can edit and delete the item
     * If he is NOT an owner he can like / unlike and make comments
 * If not logged in the quest can only see a list of products
+![edit-delete](https://user-images.githubusercontent.com/102145445/206917346-864c7790-0ae4-4d28-807f-837701adbd56.jpg)
+
 ### Login
 ![login](https://user-images.githubusercontent.com/102145445/206912735-7c750db0-b702-4b69-a4e6-78f3d587950f.jpg)
 * To  use the full functionality, any guest should log in first
