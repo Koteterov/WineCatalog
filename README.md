@@ -40,6 +40,7 @@ The application has the following parts:
 * All fields in the form are compulsory 
 * If any form input is not filled in, a mistake appears indicating an error
 ### My wines
+![my](https://user-images.githubusercontent.com/102145445/206913155-24250e12-e6a4-45a1-a655-b94e42c20597.jpg)
 * From this section every logged in user can see the products he has added to the catalog 
 * He can also edit and delete his wines from here
 ## :paperclips: Project link on Internet
