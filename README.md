@@ -35,6 +35,7 @@ The application has the following parts:
 ![search](https://user-images.githubusercontent.com/102145445/206912914-f7122418-892b-46e6-bf1f-53ead26d2851.jpg)
 * Items can be searched by product name
 ### Create wine
+![create](https://user-images.githubusercontent.com/102145445/206913025-75eacede-6a01-4434-bda1-6a0fea31dcc6.jpg)
 * If logged in, the user can add wine to the catalog 
 * All fields in the form are compulsory 
 * If any form input is not filled in, a mistake appears indicating an error
