@@ -11,6 +11,7 @@ REST service has been used and CRUD operations - GET, POST, PUT, DELETE have bee
 ## :information_source: Structure
 The application has the following parts:
 ### Home page
+![home](https://user-images.githubusercontent.com/102145445/206912427-02823586-dc8c-47e8-99b8-c197977a7b26.jpg)
 * Guests can visit all other sections depending on the authentication status
 * They are prompted to log in in order to use the full functionality of the app
 ### Catalog
