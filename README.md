@@ -15,6 +15,7 @@ The application has the following parts:
 * Guests can visit all other sections depending on the authentication status
 * They are prompted to log in in order to use the full functionality of the app
 ### Catalog
+![catalog](https://user-images.githubusercontent.com/102145445/206912574-a73fdddb-f908-4fad-b314-9b967ba937d8.jpg)
 * Pagination on server side has been implemented 
 * When logged in the user can check the product details
     * If he is an owner (i.e. has created the item) he can edit and delete the item
